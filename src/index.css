@@ -1,5 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
 
+/* Colors */
+/* 
+red: #c61f3d
+blue: #092041
+*/
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -8,4 +14,13 @@
 
 h1 {
   font-family: 'Inter', sans-serif;
+  color: #ffffff;
+  font-size: clamp(1.5rem, 5vw, 2rem);
+}
+
+header {
+  background-color: #092041;
+  height: 64px;
+  padding-top: 12px;
+  padding-left: 8px;
 }
