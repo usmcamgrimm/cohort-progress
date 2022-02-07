@@ -21,6 +21,7 @@ h1 {
 header {
   background-color: #092041;
   height: 64px;
-  padding-top: 12px;
+  display: flex;
+  align-items: center;
   padding-left: 16px;
 }
