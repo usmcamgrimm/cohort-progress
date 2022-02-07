@@ -19,6 +19,14 @@ function TaskForm() {
         name='task-due'
         placeholder='Task Due By...'
       />
+      <label htmlFor='description'>
+        Description
+      </label>
+      <textarea
+        type='text'
+        name='description'
+        placeholder='Add a description'
+      />
       <input
         type='submit'
         value='Add Task'
