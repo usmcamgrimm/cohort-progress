@@ -5,9 +5,7 @@ function App() {
   return (
     <div>
       <Header />
-      <section className='form-container'>
-        <TaskForm />
-      </section>
+      <TaskForm />
     </div>
   )
 }
