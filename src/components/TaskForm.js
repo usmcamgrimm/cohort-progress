@@ -1,24 +1,51 @@
+import { useState } from 'react'
+import db from '../firebase'
+import { collection, addDoc, Timestamp } from 'firebase/firestore'
+
 function TaskForm() {
+  const [taskTitle, setTaskTitle] = useState('')
+  const [dateDue, setDateDue] = useState('')
+  const [description, setDescription] = useState('')
+
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    try {
+      await addDoc(collection(db, 'tasks'), {
+        'task-name': taskTitle,
+        'date-due': dateDue,
+        'description': description,
+        'completed': false,
+        created: Timestamp.now()
+      })
+      onclose()
+    } catch (error) {
+      alert(error)
+    }
+  } 
+
   return(
-    <form className='taskForm'>
+    <form 
+      className='taskForm'
+      onSubmit={handleSubmit}
+    >
       <div className='form-container'>
-        <label htmlFor='task-title'>
+        <label>
           Task
         </label>
         <input
           type='text'
-          name='task-title'
+          name='taskTitle'
           placeholder='Add a task'
         />
-        <label htmlFor='task-due'>
+        <label>
           Due By
         </label>
         <input
           type='text'
-          name='task-due'
+          name='dateDue'
           placeholder='Task Due By...'
         />
-        <label htmlFor='description'>
+        <label>
           Description
         </label>
         <textarea
